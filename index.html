@@ -1,203 +1,343 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>선남농협 하나로마트 - 2026 설맞이 할인행사</title>
+  <title>선남농협 하나로마트 - 2026 설맞이 대축제</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+            sans: ['Pretendard', '-apple-system', 'sans-serif'],
           },
+          colors: {
+            'nh-green': '#009743',
+            'nh-yellow': '#F9D423',
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1s ease-out forwards',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
         }
       }
     }
   </script>
+
+  <!-- Custom Styles -->
   <style>
-    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
-    .gift-card { transition: transform 0.2s, box-shadow 0.2s; }
-    .gift-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    /* Glassmorphism Utilities */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Typography Shades */
+    .text-glow {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #666;
+    }
   </style>
 </head>
-<body class="bg-white min-h-screen">
 
-  <!-- Header -->
-  <header class="border-b border-stone-100">
-    <div class="max-w-5xl mx-auto px-4 py-4">
-      <div class="flex flex-col items-center gap-3">
-        <img src="snnhhanaro.png" alt="선남농협 하나로마트" class="w-full max-w-xs md:max-w-sm h-auto">
-        <div class="text-center">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl text-red-600 tracking-tight">
-            설맞이 할인행사 및 사은품 증정
-          </h1>
-          <p class="mt-3 text-lg md:text-xl lg:text-2xl text-stone-800">
-            2026. 2. 3.(화) ~ 2. 16.(월)
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
+<body class="bg-black text-white antialiased overflow-x-hidden">
 
-  <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-8 md:py-12">
-
-    <!-- Section Title -->
-    <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold text-stone-800 mb-6">구매금액별 사은품</h2>
-
-    <!-- Gifts Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
-
-      <!-- 5만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">5만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/01-tissue.png" alt="순백 물티슈" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">순백 물티슈</h3>
-        </div>
-      </div>
-
-      <!-- 10만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">10만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/02-dishsoap.jpeg" alt="순샘 주방세제" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">순샘 주방세제</h3>
-        </div>
-      </div>
-
-      <!-- 20만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">20만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/03-kitchentowel.jpg" alt="코디 키친타올" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">코디 키친타올 6롤</h3>
-        </div>
-      </div>
-
-      <!-- 30만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">30만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/04-container.png" alt="셰프웨어 밀폐용기" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">셰프웨어 밀폐용기</h3>
-        </div>
-      </div>
-
-      <!-- 40만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">40만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/05-detergent.webp" alt="테크 세탁세제" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">테크 세탁세제</h3>
-        </div>
-      </div>
-
-      <!-- 60만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-stone-600">60만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/06-toiletpaper.jpg" alt="잘풀리는집 궁" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">잘풀리는집 궁</h3>
-          <p class="text-sm md:text-base text-stone-400 text-center mt-0.5">30m × 30롤</p>
-        </div>
-      </div>
-
-      <!-- 80만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-amber-600">80만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/07-coffee.jpg" alt="커피믹스" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">커피믹스 240T</h3>
-        </div>
-      </div>
-
-      <!-- 100만원 -->
-      <div class="gift-card bg-stone-50 rounded-2xl overflow-hidden">
-        <div class="p-4">
-          <span class="text-base md:text-lg lg:text-xl font-bold text-amber-600">100만원 이상</span>
-          <div class="aspect-square bg-white rounded-xl mt-3 p-3 flex items-center justify-center">
-            <img src="images/08-meatcoupon.png" alt="정육교환권" class="w-full h-full object-contain">
-          </div>
-          <h3 class="font-semibold text-stone-800 text-base md:text-lg mt-3 text-center">정육교환권</h3>
-          <p class="text-sm md:text-base text-stone-400 text-center mt-0.5">5만원 상당</p>
-        </div>
-      </div>
-
+  <!-- Hero Section (Video Background) -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <div class="absolute inset-0 z-0">
+      <video src="redhorce.mp4" autoplay muted loop playsinline class="w-full h-full object-cover opacity-60"></video>
+      <!-- Overlay Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black"></div>
     </div>
 
-    <!-- Notice Section -->
-    <div class="mt-10 md:mt-14">
-      <h3 class="text-base md:text-lg lg:text-xl font-semibold text-stone-800 mb-4">안내사항</h3>
-      <ul class="space-y-2 text-base md:text-lg text-stone-500">
-        <li class="flex items-start gap-2">
-          <span class="text-stone-300">•</span>
-          <span>행사기간 동안 구매금액에 한해 합산 가능 (영수증 재발급 불가)</span>
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto space-y-6">
+      <div class="inline-block animate-fade-in-up" style="animation-delay: 0.2s;">
+        <span
+          class="px-4 py-1.5 rounded-full glass text-sm md:text-base font-medium text-yellow-300 border-yellow-300/30">
+          2026 병오년 설맞이
+        </span>
+      </div>
+
+      <h1
+        class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none text-glow animate-fade-in-up"
+        style="animation-delay: 0.4s;">
+        BIG SALE<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500">대축제</span>
+      </h1>
+
+      <p class="text-xl md:text-3xl text-gray-200 font-light animate-fade-in-up" style="animation-delay: 0.6s;">
+        선남농협 하나로마트
+      </p>
+
+      <div class="glass-dark inline-block rounded-2xl p-6 mt-8 animate-fade-in-up" style="animation-delay: 0.8s;">
+        <p class="text-gray-400 text-sm md:text-base uppercase tracking-widest mb-1">Event Period</p>
+        <p class="text-2xl md:text-4xl font-bold font-mono text-white">
+          2026. 2. 3 <span class="text-yellow-500 mx-2">~</span> 2. 16
+        </p>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-8 h-8 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Section -->
+  <section class="py-20 px-4 bg-gradient-to-b from-black to-zinc-900">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-4">
+          구매금액별 사은품
+        </h2>
+        <p class="text-gray-400 text-lg">
+          정성을 담아 준비한 특별한 선물을 만나보세요
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <!-- Card Template -->
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              5만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/01-tissue.png" alt="물티슈"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">순백 물티슈</h3>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              10만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/02-dishsoap.jpeg" alt="주방세제"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">순샘 주방세제</h3>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              20만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/03-kitchentowel.jpg" alt="키친타올"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">코디 키친타올</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-400">6롤</p>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              30만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/04-container.png" alt="밀폐용기"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">셰프웨어 밀폐용기</h3>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              40만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/05-detergent.webp" alt="세탁세제"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">테크 세탁세제</h3>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-yellow-400 font-bold text-sm md:text-base border border-zinc-700 group-hover:bg-yellow-400 group-hover:text-black transition-colors">
+              60만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/06-toiletpaper.jpg" alt="화장지"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white">잘풀리는집 궁</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-400">30m × 30롤</p>
+          </div>
+        </div>
+
+        <!-- Premium Tiers -->
+        <div
+          class="group glass-dark rounded-3xl p-4 border-amber-500/30 transition-all duration-300 hover:bg-amber-900/20 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30 col-span-1 md:col-span-1">
+          <div class="text-center mb-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-amber-600 text-black font-bold text-sm md:text-base shadow-lg shadow-amber-500/40">
+              80만원 이상
+            </span>
+          </div>
+          <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+            <img src="images/07-coffee.jpg" alt="커피믹스"
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg md:text-xl font-bold text-amber-200 group-hover:text-amber-100">커피믹스 240T</h3>
+          </div>
+        </div>
+
+        <div
+          class="group glass-dark rounded-3xl p-4 border-amber-500/50 transition-all duration-300 hover:bg-amber-900/30 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/50 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          </div>
+          <div class="relative z-10">
+            <div class="text-center mb-4">
+              <span
+                class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-black font-extrabold text-sm md:text-base shadow-lg shadow-amber-400/50">
+                100만원 이상
+              </span>
+            </div>
+            <div class="aspect-square bg-white rounded-2xl p-4 flex items-center justify-center mb-4 overflow-hidden">
+              <img src="images/08-meatcoupon.png" alt="정육교환권"
+                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg md:text-xl font-bold text-amber-200 group-hover:text-amber-100">정육교환권</h3>
+              <p class="text-sm text-amber-400/80">5만원 상당</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Section -->
+  <section class="py-16 px-4 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-3xl mx-auto glass-dark rounded-2xl p-8">
+      <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        유의사항
+      </h3>
+      <ul class="space-y-4 text-gray-400 text-base">
+        <li class="flex items-start gap-3">
+          <span class="text-yellow-500 text-lg">•</span>
+          <span>행사기간 동안 구매하신 영수증 합산이 가능합니다. (단, 영수증 재발급 건은 제외)</span>
         </li>
-        <li class="flex items-start gap-2">
-          <span class="text-stone-300">•</span>
-          <span>사은품은 행사기간 동안 지급하며, 타 상품 교환 및 현금 환불 불가</span>
+        <li class="flex items-start gap-3">
+          <span class="text-yellow-500 text-lg">•</span>
+          <span>사은품은 현금이나 타 상품으로 교환 및 환불이 불가합니다.</span>
         </li>
-        <li class="flex items-start gap-2">
-          <span class="text-stone-300">•</span>
-          <span>사은품 중복 증정 불가 (금액별 상위 상품 1개 증정)</span>
+        <li class="flex items-start gap-3">
+          <span class="text-yellow-500 text-lg">•</span>
+          <span>금액별 사은품은 상위 등급 1개만 지급되며 중복 증정되지 않습니다.</span>
         </li>
       </ul>
     </div>
-
-    <!-- Closing Message -->
-    <div class="mt-10 md:mt-14 text-center py-6 border-t border-stone-100">
-      <p class="text-base md:text-lg lg:text-xl text-stone-600">
-        할인행사 많이 하오니 많은 이용 부탁드리며,<br>
-        사은품 많이 받아가세요!
-      </p>
-      <video
-        src="redhorce.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        class="w-full mx-auto mt-6 rounded-xl"
-      ></video>
-      <p class="mt-4 text-xl md:text-2xl lg:text-3xl font-semibold text-green-700">
-        2026년 병오년
-      </p>
-      <p class="mt-2 text-xl md:text-2xl lg:text-3xl font-semibold text-green-700">
-        새해 복 많이 받으세요
-      </p>
-    </div>
-
-  </main>
+  </section>
 
   <!-- Footer -->
-  <footer class="border-t border-stone-100">
-    <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-      <p class="text-base md:text-lg lg:text-xl text-stone-600 mb-6">
-        성주사랑상품권, 성주사랑카드<br class="md:hidden">
-        선남농협 하나로마트 본점, 지점에서<br class="md:hidden">
-        사용가능 하오니 많은 이용 부탁드립니다.
+  <footer class="py-12 bg-black text-center border-t border-zinc-900">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col items-center gap-6">
+      <img src="snnhhanaro.png" alt="선남농협"
+        class="w-48 opacity-80 hover:opacity-100 transition-opacity invert brightness-0 invert-100">
+      <p class="text-zinc-500">
+        성주사랑상품권, 성주사랑카드 사용가능<br>
+        선남농협 하나로마트 본점/지점
       </p>
-      <img src="snnhhanaro.png" alt="선남농협 하나로마트" class="w-full max-w-xs md:max-w-sm lg:max-w-md h-auto mx-auto">
+      <p class="text-yellow-600/50 text-sm mt-4 font-mono">
+        © 2026 SUNNAM NONGHYUP. All rights reserved.
+      </p>
     </div>
   </footer>
 
 </body>
+
 </html>
