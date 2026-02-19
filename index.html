@@ -48,8 +48,29 @@
       pointer-events: none;
     }
 
-    .business-closed .business-name {
+    .business-closed .business-name,
+    .business-closed .business-hours {
       color: #9ca3af;
+    }
+
+    .business-open-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .business-open {
+      background-color: #009743;
+      color: white;
+    }
+
+    .business-closed-badge {
+      background-color: #9ca3af;
+      color: white;
     }
   </style>
 </head>
@@ -81,7 +102,7 @@
     <!-- Business Status Legend -->
     <div class="flex items-center gap-4 mb-6 text-xs text-gray-500">
       <div class="flex items-center gap-1.5">
-        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+        <div class="w-2 h-2 bg-nh-green rounded-full"></div>
         <span>영업중</span>
       </div>
       <div class="flex items-center gap-1.5">
@@ -97,11 +118,12 @@
         <h3 class="text-lg font-bold text-gray-900">본점</h3>
       </div>
       
-      <!-- 본점 상호금융 (2 cards side by side) -->
-      <div class="grid grid-cols-2 gap-3 mb-3">
-        <a href="headquarters.html" data-business-days="1,2,3,4,5"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600 business-icon-bg">
+      <!-- 본점 사업장 그리드 (2 columns x 3 rows) -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- 상호금융 -->
+        <a href="headquarters.html" data-business="headquarters"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
@@ -109,54 +131,41 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">상호금융</h4>
-          <p class="text-xs text-gray-400 mt-0.5">평일 09:00-16:30</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
         </a>
-        <a href="headquarters.html" data-business-days="1,2,3,4,5"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600 business-icon-bg">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z">
-              </path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">상호금융</h4>
-          <p class="text-xs text-gray-400 mt-0.5">평일 09:00-16:30</p>
-        </a>
-      </div>
 
-      <!-- 본점 사업장 그리드 (6 cards, 3x2) -->
-      <div class="grid grid-cols-3 gap-3">
         <!-- 하나로마트 -->
-        <a href="mart.html" data-business-days="1,2,3,4,5,6,0"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green business-icon-bg">
+        <a href="mart.html" data-business="mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
               </path>
             </svg>
           </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">하나로<br>마트</h4>
+          <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">매일 10:00-21:00</p>
         </a>
 
         <!-- 영농자재센터 -->
-        <a href="material.html" data-business-days="1,2,3,4,5,6"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center mb-2 text-yellow-600 business-icon-bg">
+        <a href="material.html" data-business="material"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center mb-2 text-yellow-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
               </path>
             </svg>
           </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">영농<br>자재센터</h4>
+          <h4 class="font-bold text-gray-900 text-sm business-name">영농자재센터</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
         </a>
 
         <!-- 공판장 -->
-        <a href="auction.html" data-business-days="1,2,3,4,5"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-2 text-red-600 business-icon-bg">
+        <a href="auction.html" data-business="auction"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-2 text-red-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
@@ -164,23 +173,25 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">공판장</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-17:00</p>
         </a>
 
         <!-- 클린주유소 -->
-        <a href="gas.html" data-business-days="1,2,3,4,5,6,0"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500 business-icon-bg">
+        <a href="gas.html" data-business="gas"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">클린<br>주유소</h4>
+          <h4 class="font-bold text-gray-900 text-sm business-name">클린주유소</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">24시간 영업</p>
         </a>
 
         <!-- APC (유통센터) -->
-        <a href="apc.html" data-business-days="1,2,3,4,5,6"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-600 business-icon-bg">
+        <a href="apc.html" data-business="apc"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -188,10 +199,8 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">APC</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
         </a>
-
-        <!-- Spacer or additional business -->
-        <div class="h-28"></div>
       </div>
     </div>
 
@@ -202,26 +211,30 @@
         <h3 class="text-lg font-bold text-gray-900">지점</h3>
       </div>
       
-      <!-- 도흥지점 - 3 cards -->
-      <div class="grid grid-cols-3 gap-3">
-        <!-- 상호금융 -->
-        <a href="doheung.html" data-business-days="1,2,3,4,5"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600 business-icon-bg">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-              </path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">상호금융</h4>
-          <p class="text-xs text-gray-400 mt-0.5">도흥지점</p>
-        </a>
-
+      <!-- 도흥지점 - 상단 긴 카드 -->
+      <a href="doheung.html" data-business="doheung"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
+        <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-900 business-name">도흥지점</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
+        </div>
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+      
+      <!-- 도흥지점 사업장 (2 cards) -->
+      <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
-        <a href="#" data-business-days="1,2,3,4,5,6,0"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green business-icon-bg">
+        <a href="#" data-business="doheung_mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
@@ -229,13 +242,13 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
-          <p class="text-xs text-gray-400 mt-0.5">도흥지점</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">매일 10:00-21:00</p>
         </a>
 
         <!-- 자재백화점 -->
-        <a href="material_store.html" data-business-days="1,2,3,4,5,6"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100">
-          <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-700 business-icon-bg">
+        <a href="material_store.html" data-business="material_store"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-700">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
@@ -243,7 +256,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">자재백화점</h4>
-          <p class="text-xs text-gray-400 mt-0.5">선노로</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
         </a>
       </div>
     </div>
@@ -271,22 +284,71 @@
 
   <!-- Business Hours Script -->
   <script>
-    // Get current day (0=Sunday, 1=Monday, ..., 6=Saturday)
-    const today = new Date().getDay();
-    
-    // Apply closed styling to businesses not open today
-    document.querySelectorAll('[data-business-days]').forEach(card => {
-      const businessDays = card.getAttribute('data-business-days').split(',').map(Number);
-      if (!businessDays.includes(today)) {
-        card.classList.add('business-closed');
-        // Add closed badge
+    // Business hours configuration
+    const businessHours = {
+      headquarters: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
+      mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 10, end: 21 } },
+      material: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
+      auction: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 17 } },
+      gas: { days: [0, 1, 2, 3, 4, 5, 6], hours: null }, // 24 hours
+      apc: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
+      doheung: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
+      doheung_mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 10, end: 21 } },
+      material_store: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } }
+    };
+
+    function checkBusinessStatus() {
+      const now = new Date();
+      const today = now.getDay();
+      const currentHour = now.getHours() + now.getMinutes() / 60;
+
+      document.querySelectorAll('[data-business]').forEach(card => {
+        const businessKey = card.getAttribute('data-business');
+        const config = businessHours[businessKey];
+        
+        if (!config) return;
+
+        const isOpenDay = config.days.includes(today);
+        let isOpen = false;
+
+        if (isOpenDay) {
+          if (config.hours === null) {
+            // 24 hours business (gas station)
+            isOpen = true;
+          } else {
+            // Check if within business hours
+            isOpen = currentHour >= config.hours.start && currentHour < config.hours.end;
+          }
+        }
+
+        // Remove existing badge
+        const existingBadge = card.querySelector('.business-open-badge, .business-closed-badge');
+        if (existingBadge) {
+          existingBadge.remove();
+        }
+
+        // Add badge
         const badge = document.createElement('div');
-        badge.className = 'absolute top-2 right-2 bg-gray-400 text-white text-[10px] px-1.5 py-0.5 rounded';
-        badge.textContent = '휴업';
-        card.style.position = 'relative';
+        badge.className = 'business-open-badge';
+        
+        if (isOpen) {
+          badge.classList.add('business-open');
+          badge.textContent = '영업중';
+        } else {
+          badge.classList.add('business-closed-badge');
+          badge.textContent = '휴업';
+          card.classList.add('business-closed');
+        }
+        
         card.appendChild(badge);
-      }
-    });
+      });
+    }
+
+    // Check on load
+    checkBusinessStatus();
+    
+    // Check every minute
+    setInterval(checkBusinessStatus, 60000);
   </script>
 
 </body>
