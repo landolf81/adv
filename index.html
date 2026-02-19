@@ -67,117 +67,135 @@
       <p class="text-gray-500 text-sm">원하시는 사업장을 선택하시면<br>상세 정보를 확인하실 수 있습니다.</p>
     </div>
 
-    <!-- Business Grid -->
-    <div class="grid grid-cols-2 gap-4">
+    <!-- 본점 섹션 -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1 h-6 bg-nh-green rounded-full"></div>
+        <h3 class="text-lg font-bold text-gray-900">본점</h3>
+      </div>
+      
+      <div class="space-y-3">
+        <!-- 본점 상호금융 -->
+        <a href="headquarters.html"
+          class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 border border-gray-100">
+          <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+              </path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">상호금융</h4>
+            <p class="text-xs text-gray-400 mt-0.5">예금 / 대출 / 금융업무</p>
+          </div>
+        </a>
 
-      <!-- Headquarters (Sangho Finance) -->
-      <a href="headquarters.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-3 text-blue-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-            </path>
-          </svg>
+        <!-- 본점 사업장 그리드 -->
+        <div class="grid grid-cols-2 gap-3">
+          <!-- 하나로마트 -->
+          <a href="mart.html"
+            class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100">
+            <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                </path>
+              </svg>
+            </div>
+            <h4 class="font-bold text-gray-900 text-sm">하나로마트</h4>
+          </a>
+
+          <!-- 영농자재센터 -->
+          <a href="material.html"
+            class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100">
+            <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center mb-2 text-yellow-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                </path>
+              </svg>
+            </div>
+            <h4 class="font-bold text-gray-900 text-sm">영농자재센터</h4>
+          </a>
+
+          <!-- 공판장 -->
+          <a href="auction.html"
+            class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100">
+            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-2 text-red-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
+                </path>
+              </svg>
+            </div>
+            <h4 class="font-bold text-gray-900 text-sm">공판장</h4>
+          </a>
+
+          <!-- 클린주유소 -->
+          <a href="gas.html"
+            class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100">
+            <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h4 class="font-bold text-gray-900 text-sm">클린주유소</h4>
+          </a>
+
+          <!-- APC (유통센터) -->
+          <a href="apc.html"
+            class="bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 col-span-2">
+            <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                </path>
+              </svg>
+            </div>
+            <h4 class="font-bold text-gray-900 text-sm">APC (산지유통센터)</h4>
+          </a>
         </div>
-        <h3 class="font-bold text-gray-900">본점 (상호금융)</h3>
-        <p class="text-xs text-gray-400 mt-1">금융 / 행정</p>
-      </a>
+      </div>
+    </div>
 
-      <!-- Hanaro Mart -->
-      <a href="mart.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-3 text-nh-green">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-            </path>
-          </svg>
+    <!-- 지점 섹션 -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+        <h3 class="text-lg font-bold text-gray-900">지점</h3>
+      </div>
+      
+      <!-- 도흥지점 -->
+      <div class="bg-white p-5 rounded-2xl shadow-card border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900">도흥지점</h4>
+            <p class="text-xs text-gray-400">경북 성주군 선남면</p>
+          </div>
         </div>
-        <h3 class="font-bold text-gray-900">하나로마트</h3>
-        <p class="text-xs text-gray-400 mt-1">본점</p>
-      </a>
-
-      <!-- Doheung Branch -->
-      <a href="doheung.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center mb-3 text-indigo-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-          </svg>
+        
+        <div class="grid grid-cols-3 gap-2">
+          <a href="doheung.html"
+            class="bg-gray-50 p-3 rounded-xl active:scale-[0.98] transition-transform tap-highlight-transparent text-center">
+            <span class="text-xs font-medium text-gray-700">상호금융</span>
+          </a>
+          <a href="#"
+            class="bg-gray-50 p-3 rounded-xl active:scale-[0.98] transition-transform tap-highlight-transparent text-center">
+            <span class="text-xs font-medium text-gray-700">하나로마트</span>
+          </a>
+          <a href="material_store.html"
+            class="bg-gray-50 p-3 rounded-xl active:scale-[0.98] transition-transform tap-highlight-transparent text-center">
+            <span class="text-xs font-medium text-gray-700">자재백화점</span>
+          </a>
         </div>
-        <h3 class="font-bold text-gray-900">도흥지점</h3>
-        <p class="text-xs text-gray-400 mt-1">금융 / 마트</p>
-      </a>
-
-      <!-- Clean Gas Station -->
-      <a href="gas.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center mb-3 text-orange-500">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h3 class="font-bold text-gray-900">클린주유소</h3>
-        <p class="text-xs text-gray-400 mt-1">정품 / 정량</p>
-      </a>
-
-      <!-- Farming Material Center -->
-      <a href="material.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center mb-3 text-yellow-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-            </path>
-          </svg>
-        </div>
-        <h3 class="font-bold text-gray-900">영농자재센터</h3>
-        <p class="text-xs text-gray-400 mt-1">본점</p>
-      </a>
-
-      <!-- Material Dept Store -->
-      <a href="material_store.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mb-3 text-amber-700">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-          </svg>
-        </div>
-        <h3 class="font-bold text-gray-900">자재백화점</h3>
-        <p class="text-xs text-gray-400 mt-1">선노로</p>
-      </a>
-
-      <!-- Gongpanjang (Auction) -->
-      <a href="auction.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-3 text-red-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
-            </path>
-          </svg>
-        </div>
-        <h3 class="font-bold text-gray-900">공판장</h3>
-        <p class="text-xs text-gray-400 mt-1">참외 경매</p>
-      </a>
-
-      <!-- APC -->
-      <a href="apc.html"
-        class="bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-40 border border-gray-100">
-        <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mb-3 text-purple-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-            </path>
-          </svg>
-        </div>
-        <h3 class="font-bold text-gray-900">APC</h3>
-        <p class="text-xs text-gray-400 mt-1">산지유통</p>
-      </a>
-
+      </div>
     </div>
 
     <!-- Quick Contact -->
