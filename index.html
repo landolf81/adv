@@ -71,64 +71,6 @@
       background-color: #9ca3af;
       color: white;
     }
-
-    /* Modal styles */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 100;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      width: 90%;
-      max-width: 320px;
-      animation: modalSlide 0.3s ease;
-    }
-
-    @keyframes modalSlide {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #6b7280;
-      cursor: pointer;
-    }
   </style>
 </head>
 
@@ -189,8 +131,8 @@
       </div>
       
       <!-- 본점 상호금융 (긴 카드) -->
-      <div onclick="showModal('headquarters')" data-business="headquarters"
-        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative cursor-pointer">
+      <a href="headquarters.html" data-business="headquarters"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
         <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -205,13 +147,13 @@
         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-      </div>
+      </a>
 
       <!-- 본점 사업장 그리드 (2 columns x 3 rows) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
-        <div onclick="showModal('mart')" data-business="mart"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="mart.html" data-business="mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -221,11 +163,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물, 생활용품 판매</p>
-        </div>
+        </a>
 
         <!-- 영농자재센터 -->
-        <div onclick="showModal('material')" data-business="material"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="material.html" data-business="material"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center mb-2 text-yellow-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -235,11 +177,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">영농자재센터</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">농약, 비료, 자재</p>
-        </div>
+        </a>
 
         <!-- 공판장 -->
-        <div onclick="showModal('auction')" data-business="auction"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="auction.html" data-business="auction"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-2 text-red-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -249,11 +191,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">공판장</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">경매</p>
-        </div>
+        </a>
 
         <!-- 클린주유소 -->
-        <div onclick="showModal('gas')" data-business="gas"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="gas.html" data-business="gas"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -261,11 +203,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">클린주유소</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">면세유, 유류, 윤활유</p>
-        </div>
+        </a>
 
         <!-- APC (유통센터) -->
-        <div onclick="showModal('apc')" data-business="apc"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="apc.html" data-business="apc"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -275,11 +217,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">APC</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물 수탁, 선별, 출하</p>
-        </div>
+        </a>
 
         <!-- 사업장 외 업무 (긴 카드) -->
-        <div onclick="showModal('other')" data-business="other_business"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="#" data-business="other_business"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mb-2 text-gray-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -289,7 +231,7 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">사업장 외 업무</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">기타 업무 문의</p>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -313,8 +255,8 @@
       </div>
       
       <!-- 도흥지점 - 상단 긴 카드 -->
-      <div onclick="showModal('doheung')" data-business="doheung"
-        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative cursor-pointer">
+      <a href="doheung.html" data-business="doheung"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
         <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -328,13 +270,13 @@
         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-      </div>
+      </a>
       
       <!-- 도흥지점 사업장 (2 cards) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
-        <div onclick="showModal('doheung_mart')" data-business="doheung_mart"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="#" data-business="doheung_mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -344,11 +286,11 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물, 생활용품 판매</p>
-        </div>
+        </a>
 
         <!-- 자재백화점 -->
-        <div onclick="showModal('material_store')" data-business="material_store"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
+        <a href="material_store.html" data-business="material_store"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-700">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -358,7 +300,7 @@
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">자재백화점</h4>
           <p class="text-xs text-gray-500 mt-0.5 business-desc">농약, 비료, 자재</p>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -383,174 +325,8 @@
     <p>© 2026 선남농협. All rights reserved.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="businessModal" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-content relative" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div class="modal-header">
-        <div id="modalIcon" class="w-12 h-12 rounded-full flex items-center justify-center shrink-0"></div>
-        <div>
-          <h3 id="modalTitle" class="font-bold text-gray-900 text-lg"></h3>
-          <p id="modalSubtitle" class="text-xs text-gray-400"></p>
-        </div>
-      </div>
-      <div class="space-y-4">
-        <div>
-          <p class="text-sm font-medium text-gray-700 mb-1">업무 내용</p>
-          <p id="modalDesc" class="text-sm text-gray-600"></p>
-        </div>
-        <div>
-          <p class="text-sm font-medium text-gray-700 mb-1">영업 시간</p>
-          <p id="modalHours" class="text-sm text-gray-600"></p>
-        </div>
-        <div id="modalContact" class="hidden">
-          <p class="text-sm font-medium text-gray-700 mb-1">연락처</p>
-          <a id="modalPhone" href="" class="text-sm text-nh-green font-medium"></a>
-        </div>
-      </div>
-      <div class="mt-6">
-        <a id="modalLink" href="" class="w-full bg-nh-green text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform">
-          <span>상세 정보 보기</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- Business Hours Script -->
   <script>
-    // Business data
-    const businessData = {
-      headquarters: {
-        name: '상호금융 (본점)',
-        subtitle: '본점',
-        desc: '예금, 대출, 보험, 카드',
-        hours: '평일 09:00-16:30\n(공휴일 휬무)',
-        phone: '054-932-1191',
-        link: 'headquarters.html',
-        iconColor: 'bg-blue-50 text-blue-600'
-      },
-      mart: {
-        name: '하나로마트 (본점)',
-        subtitle: '본점',
-        desc: '농산물, 생활용품 판매',
-        hours: '매일 09:00-19:00\n(휴일 동일)',
-        phone: null,
-        link: 'mart.html',
-        iconColor: 'bg-green-50 text-nh-green'
-      },
-      material: {
-        name: '영농자재센터',
-        subtitle: '본점',
-        desc: '농약, 비료, 자재',
-        hours: '평일 09:00-18:00\n토요일/공휴일 09:00-12:00\n일요일 휬무',
-        phone: null,
-        link: 'material.html',
-        iconColor: 'bg-yellow-50 text-yellow-600'
-      },
-      auction: {
-        name: '공판장',
-        subtitle: '본점',
-        desc: '경매',
-        hours: '평일 09:00-17:00\n2월 22일부터 일요일도 경매\n(경매시각 13시)',
-        phone: null,
-        link: 'auction.html',
-        iconColor: 'bg-red-50 text-red-600'
-      },
-      gas: {
-        name: '클린주유소',
-        subtitle: '본점',
-        desc: '면세유, 유류, 윤활유',
-        hours: '평일 07:00-19:00\n주말/공휴일 08:00-18:00',
-        phone: null,
-        link: 'gas.html',
-        iconColor: 'bg-orange-50 text-orange-500'
-      },
-      apc: {
-        name: 'APC',
-        subtitle: '본점',
-        desc: '농산물 수탁, 선별, 출하',
-        hours: '09:00-18:00',
-        phone: null,
-        link: 'apc.html',
-        iconColor: 'bg-purple-50 text-purple-600'
-      },
-      other: {
-        name: '사업장 외 업무',
-        subtitle: '본점',
-        desc: '기타 업무 문의',
-        hours: '평일 09:00-16:30\n(공휴일 휬무)',
-        phone: '054-932-1191',
-        link: '#',
-        iconColor: 'bg-gray-100 text-gray-600'
-      },
-      doheung: {
-        name: '상호금융 (도흥지점)',
-        subtitle: '도흥지점',
-        desc: '예금, 대출, 보험, 카드',
-        hours: '평일 09:00-16:30\n(공휴일 휬무)',
-        phone: null,
-        link: 'doheung.html',
-        iconColor: 'bg-indigo-50 text-indigo-600'
-      },
-      doheung_mart: {
-        name: '하나로마트 (도흥지점)',
-        subtitle: '도흥지점',
-        desc: '농산물, 생활용품 판매',
-        hours: '평일 09:00-18:00\n휴일 09:00-12:00',
-        phone: null,
-        link: '#',
-        iconColor: 'bg-green-50 text-nh-green'
-      },
-      material_store: {
-        name: '자재백화점',
-        subtitle: '도흥지점',
-        desc: '농약, 비료, 자재',
-        hours: '평일 09:00-18:00\n휴일 09:00-12:00',
-        phone: null,
-        link: 'material_store.html',
-        iconColor: 'bg-amber-50 text-amber-700'
-      }
-    };
-
-    function showModal(businessKey) {
-      const data = businessData[businessKey];
-      if (!data) return;
-
-      document.getElementById('modalTitle').textContent = data.name;
-      document.getElementById('modalSubtitle').textContent = data.subtitle;
-      document.getElementById('modalDesc').textContent = data.desc;
-      document.getElementById('modalHours').innerHTML = data.hours.replace(/\n/g, '<br>');
-      document.getElementById('modalLink').href = data.link;
-
-      // Icon color
-      const iconDiv = document.getElementById('modalIcon');
-      iconDiv.className = `w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${data.iconColor}`;
-      iconDiv.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-      </svg>`;
-
-      // Phone
-      const contactDiv = document.getElementById('modalContact');
-      if (data.phone) {
-        contactDiv.classList.remove('hidden');
-        document.getElementById('modalPhone').textContent = data.phone;
-        document.getElementById('modalPhone').href = `tel:${data.phone}`;
-      } else {
-        contactDiv.classList.add('hidden');
-      }
-
-      document.getElementById('businessModal').classList.add('active');
-    }
-
-    function closeModal(event) {
-      if (!event || event.target.id === 'businessModal') {
-        document.getElementById('businessModal').classList.remove('active');
-      }
-    }
-
     // Check if date is a holiday (simplified)
     function isHoliday(date) {
       return date.getDay() === 0;
