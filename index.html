@@ -48,7 +48,7 @@
     }
 
     .business-closed .business-name,
-    .business-closed .business-hours {
+    .business-closed .business-desc {
       color: #9ca3af;
     }
 
@@ -70,6 +70,64 @@
     .business-closed-badge {
       background-color: #9ca3af;
       color: white;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      width: 90%;
+      max-width: 320px;
+      animation: modalSlide 0.3s ease;
+    }
+
+    @keyframes modalSlide {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #6b7280;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -125,14 +183,14 @@
           </div>
           <div class="flex-1">
             <h3 class="font-bold text-white text-lg business-name">본점</h3>
-            <p class="text-xs text-green-100 mt-0.5 business-hours">선남농협 중앙지점</p>
+            <p class="text-xs text-green-100 mt-0.5">선남농협 중앙지점</p>
           </div>
         </div>
       </div>
       
       <!-- 본점 상호금융 (긴 카드) -->
-      <a href="headquarters.html" data-business="headquarters"
-        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
+      <div onclick="showModal('headquarters')" data-business="headquarters"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative cursor-pointer">
         <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -142,18 +200,18 @@
         </div>
         <div class="flex-1">
           <h4 class="font-bold text-gray-900 business-name">상호금융</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">예금, 대출, 보험, 카드</p>
         </div>
         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-      </a>
+      </div>
 
       <!-- 본점 사업장 그리드 (2 columns x 3 rows) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
-        <a href="mart.html" data-business="mart"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('mart')" data-business="mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -162,12 +220,12 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-19:00 (휴일동일)</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물, 생활용품 판매</p>
+        </div>
 
         <!-- 영농자재센터 -->
-        <a href="material.html" data-business="material"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('material')" data-business="material"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center mb-2 text-yellow-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -176,12 +234,12 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">영농자재센터</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">토/공휴일 ~12시, 일요일 휬무</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">농약, 비료, 자재</p>
+        </div>
 
         <!-- 공판장 -->
-        <a href="auction.html" data-business="auction"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('auction')" data-business="auction"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center mb-2 text-red-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -190,24 +248,24 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">공판장</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">2/22부터 일요일도 경매 (13시)</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">경매</p>
+        </div>
 
         <!-- 클린주유소 -->
-        <a href="gas.html" data-business="gas"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('gas')" data-business="gas"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">클린주유소</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 7-19시, 주말/공휴일 8-18시</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">면세유, 유류, 윤활유</p>
+        </div>
 
         <!-- APC (유통센터) -->
-        <a href="apc.html" data-business="apc"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('apc')" data-business="apc"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -216,12 +274,12 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">APC</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물 수탁, 선별, 출하</p>
+        </div>
 
         <!-- 사업장 외 업무 (긴 카드) -->
-        <a href="#" data-business="other_business"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('other')" data-business="other_business"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mb-2 text-gray-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -230,8 +288,8 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">사업장 외 업무</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">본점 문의</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">기타 업무 문의</p>
+        </div>
       </div>
     </div>
 
@@ -249,14 +307,14 @@
           </div>
           <div class="flex-1">
             <h3 class="font-bold text-white text-lg business-name">지점</h3>
-            <p class="text-xs text-indigo-100 mt-0.5 business-hours">도흥지점 및 관련 사업장</p>
+            <p class="text-xs text-indigo-100 mt-0.5">도흥지점 및 관련 사업장</p>
           </div>
         </div>
       </div>
       
       <!-- 도흥지점 - 상단 긴 카드 -->
-      <a href="doheung.html" data-business="doheung"
-        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
+      <div onclick="showModal('doheung')" data-business="doheung"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative cursor-pointer">
         <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -265,18 +323,18 @@
         </div>
         <div class="flex-1">
           <h4 class="font-bold text-gray-900 business-name">도흥지점</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">예금, 대출, 보험, 카드</p>
         </div>
         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
-      </a>
+      </div>
       
       <!-- 도흥지점 사업장 (2 cards) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
-        <a href="#" data-business="doheung_mart"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('doheung_mart')" data-business="doheung_mart"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -285,12 +343,12 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00, 휴일 ~12시</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">농산물, 생활용품 판매</p>
+        </div>
 
         <!-- 자재백화점 -->
-        <a href="material_store.html" data-business="material_store"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+        <div onclick="showModal('material_store')" data-business="material_store"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative cursor-pointer">
           <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-700">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -299,8 +357,8 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">자재백화점</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00, 휴일 ~12시</p>
-        </a>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">농약, 비료, 자재</p>
+        </div>
       </div>
     </div>
 
@@ -325,88 +383,229 @@
     <p>© 2026 선남농협. All rights reserved.</p>
   </footer>
 
+  <!-- Modal -->
+  <div id="businessModal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content relative" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-header">
+        <div id="modalIcon" class="w-12 h-12 rounded-full flex items-center justify-center shrink-0"></div>
+        <div>
+          <h3 id="modalTitle" class="font-bold text-gray-900 text-lg"></h3>
+          <p id="modalSubtitle" class="text-xs text-gray-400"></p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <p class="text-sm font-medium text-gray-700 mb-1">업무 내용</p>
+          <p id="modalDesc" class="text-sm text-gray-600"></p>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-gray-700 mb-1">영업 시간</p>
+          <p id="modalHours" class="text-sm text-gray-600"></p>
+        </div>
+        <div id="modalContact" class="hidden">
+          <p class="text-sm font-medium text-gray-700 mb-1">연락처</p>
+          <a id="modalPhone" href="" class="text-sm text-nh-green font-medium"></a>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a id="modalLink" href="" class="w-full bg-nh-green text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform">
+          <span>상세 정보 보기</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Business Hours Script -->
   <script>
-    // Check if date is a holiday (simplified - you'd need a proper holiday list)
+    // Business data
+    const businessData = {
+      headquarters: {
+        name: '상호금융 (본점)',
+        subtitle: '본점',
+        desc: '예금, 대출, 보험, 카드',
+        hours: '평일 09:00-16:30\n(공휴일 휬무)',
+        phone: '054-932-1191',
+        link: 'headquarters.html',
+        iconColor: 'bg-blue-50 text-blue-600'
+      },
+      mart: {
+        name: '하나로마트 (본점)',
+        subtitle: '본점',
+        desc: '농산물, 생활용품 판매',
+        hours: '매일 09:00-19:00\n(휴일 동일)',
+        phone: null,
+        link: 'mart.html',
+        iconColor: 'bg-green-50 text-nh-green'
+      },
+      material: {
+        name: '영농자재센터',
+        subtitle: '본점',
+        desc: '농약, 비료, 자재',
+        hours: '평일 09:00-18:00\n토요일/공휴일 09:00-12:00\n일요일 휬무',
+        phone: null,
+        link: 'material.html',
+        iconColor: 'bg-yellow-50 text-yellow-600'
+      },
+      auction: {
+        name: '공판장',
+        subtitle: '본점',
+        desc: '경매',
+        hours: '평일 09:00-17:00\n2월 22일부터 일요일도 경매\n(경매시각 13시)',
+        phone: null,
+        link: 'auction.html',
+        iconColor: 'bg-red-50 text-red-600'
+      },
+      gas: {
+        name: '클린주유소',
+        subtitle: '본점',
+        desc: '면세유, 유류, 윤활유',
+        hours: '평일 07:00-19:00\n주말/공휴일 08:00-18:00',
+        phone: null,
+        link: 'gas.html',
+        iconColor: 'bg-orange-50 text-orange-500'
+      },
+      apc: {
+        name: 'APC',
+        subtitle: '본점',
+        desc: '농산물 수탁, 선별, 출하',
+        hours: '09:00-18:00',
+        phone: null,
+        link: 'apc.html',
+        iconColor: 'bg-purple-50 text-purple-600'
+      },
+      other: {
+        name: '사업장 외 업무',
+        subtitle: '본점',
+        desc: '기타 업무 문의',
+        hours: '평일 09:00-16:30\n(공휴일 휬무)',
+        phone: '054-932-1191',
+        link: '#',
+        iconColor: 'bg-gray-100 text-gray-600'
+      },
+      doheung: {
+        name: '상호금융 (도흥지점)',
+        subtitle: '도흥지점',
+        desc: '예금, 대출, 보험, 카드',
+        hours: '평일 09:00-16:30\n(공휴일 휬무)',
+        phone: null,
+        link: 'doheung.html',
+        iconColor: 'bg-indigo-50 text-indigo-600'
+      },
+      doheung_mart: {
+        name: '하나로마트 (도흥지점)',
+        subtitle: '도흥지점',
+        desc: '농산물, 생활용품 판매',
+        hours: '평일 09:00-18:00\n휴일 09:00-12:00',
+        phone: null,
+        link: '#',
+        iconColor: 'bg-green-50 text-nh-green'
+      },
+      material_store: {
+        name: '자재백화점',
+        subtitle: '도흥지점',
+        desc: '농약, 비료, 자재',
+        hours: '평일 09:00-18:00\n휴일 09:00-12:00',
+        phone: null,
+        link: 'material_store.html',
+        iconColor: 'bg-amber-50 text-amber-700'
+      }
+    };
+
+    function showModal(businessKey) {
+      const data = businessData[businessKey];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.name;
+      document.getElementById('modalSubtitle').textContent = data.subtitle;
+      document.getElementById('modalDesc').textContent = data.desc;
+      document.getElementById('modalHours').innerHTML = data.hours.replace(/\n/g, '<br>');
+      document.getElementById('modalLink').href = data.link;
+
+      // Icon color
+      const iconDiv = document.getElementById('modalIcon');
+      iconDiv.className = `w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${data.iconColor}`;
+      iconDiv.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>`;
+
+      // Phone
+      const contactDiv = document.getElementById('modalContact');
+      if (data.phone) {
+        contactDiv.classList.remove('hidden');
+        document.getElementById('modalPhone').textContent = data.phone;
+        document.getElementById('modalPhone').href = `tel:${data.phone}`;
+      } else {
+        contactDiv.classList.add('hidden');
+      }
+
+      document.getElementById('businessModal').classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (!event || event.target.id === 'businessModal') {
+        document.getElementById('businessModal').classList.remove('active');
+      }
+    }
+
+    // Check if date is a holiday (simplified)
     function isHoliday(date) {
-      // This is a placeholder - you'd need to implement actual holiday checking
-      // For now, we'll treat Sunday as the only "holiday" for special hours
       return date.getDay() === 0;
     }
 
-    // Check if date is Sunday
     function isSunday(date) {
       return date.getDay() === 0;
     }
 
-    // Check if date is Saturday
     function isSaturday(date) {
       return date.getDay() === 6;
     }
 
-    // Business hours configuration
+    // Business hours configuration for status check
     const businessHours = {
-      headquarters: { 
-        days: [1, 2, 3, 4, 5], 
-        hours: { start: 9, end: 16.5 } 
-      },
-      mart: { 
-        // 9:00-19:00, same on holidays
-        days: [0, 1, 2, 3, 4, 5, 6], 
-        hours: { start: 9, end: 19 } 
-      },
+      headquarters: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
+      mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 9, end: 19 } },
       material: { 
-        // 평일 full, 토/공휴일 ~12시, 일요일 휬무
-        days: [1, 2, 3, 4, 5, 6], // Including Saturday (special handling below)
+        days: [1, 2, 3, 4, 5, 6],
         hours: function(date) {
-          if (isSunday(date)) return null; // Closed
+          if (isSunday(date)) return null;
           if (isSaturday(date) || isHoliday(date)) {
-            return { start: 9, end: 12 }; // ~12시
+            return { start: 9, end: 12 };
           }
-          return { start: 9, end: 18 }; // 평일
+          return { start: 9, end: 18 };
         }
       },
-      auction: { 
-        // 2/22부터 일요일도 경매. 현재는 경매시각 13시
-        // For simplicity, we'll check if it's before Feb 22, 2026
-        days: [1, 2, 3, 4, 5, 6], // Before Feb 22
-        hours: { start: 9, end: 17 } // Assuming auction ends by 17:00
-      },
+      auction: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 17 } },
       gas: { 
-        // 평일 7-19시, 주말/공휴일 8-18시
         days: [0, 1, 2, 3, 4, 5, 6], 
         hours: function(date) {
           const day = date.getDay();
           if (day === 0 || day === 6 || isHoliday(date)) {
-            return { start: 8, end: 18 }; // 주말/공휴일
+            return { start: 8, end: 18 };
           }
-          return { start: 7, end: 19 }; // 평일
+          return { start: 7, end: 19 };
         }
       },
-      apc: { 
-        days: [1, 2, 3, 4, 5, 6], 
-        hours: { start: 9, end: 18 } 
-      },
-      doheung: { 
-        days: [1, 2, 3, 4, 5], 
-        hours: { start: 9, end: 16.5 } 
-      },
+      apc: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
+      other_business: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
+      doheung: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
       doheung_mart: { 
-        // 9:00-18:00, 휴일 ~12시
         days: [0, 1, 2, 3, 4, 5, 6], 
         hours: function(date) {
           if (isHoliday(date)) {
-            return { start: 9, end: 12 }; // 휴일 ~12시
+            return { start: 9, end: 12 };
           }
           return { start: 9, end: 18 };
         }
       },
       material_store: { 
-        // 지점 자재는 지점 마트와 동일: 9:00-18:00, 휴일 ~12시
         days: [0, 1, 2, 3, 4, 5, 6], 
         hours: function(date) {
           if (isHoliday(date)) {
-            return { start: 9, end: 12 }; // 휴일 ~12시
+            return { start: 9, end: 12 };
           }
           return { start: 9, end: 18 };
         }
@@ -436,14 +635,12 @@
           isOpen = currentHour >= hours.start && currentHour < hours.end;
         }
 
-        // Remove existing badge
         const existingBadge = card.querySelector('.business-open-badge, .business-closed-badge');
         if (existingBadge) {
           existingBadge.remove();
         }
         card.classList.remove('business-closed');
 
-        // Add badge
         const badge = document.createElement('div');
         badge.className = 'business-open-badge';
         
@@ -460,10 +657,7 @@
       });
     }
 
-    // Check on load
     checkBusinessStatus();
-    
-    // Check every minute
     setInterval(checkBusinessStatus, 60000);
   </script>
 
