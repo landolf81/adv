@@ -113,9 +113,22 @@
 
     <!-- 본점 섹션 -->
     <div class="mb-8">
-      <div class="flex items-center gap-2 mb-4">
-        <div class="w-1 h-6 bg-nh-green rounded-full"></div>
-        <h3 class="text-lg font-bold text-gray-900">본점</h3>
+      <!-- 본점 헤더 카드 -->
+      <div data-business="headquarters_header"
+        class="business-card bg-gradient-to-r from-nh-green to-green-600 p-5 rounded-2xl shadow-card mb-3 border border-green-500 relative">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+              </path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-white text-lg business-name">본점</h3>
+            <p class="text-xs text-green-100 mt-0.5 business-hours">선남농협 중앙지점</p>
+          </div>
+        </div>
       </div>
       
       <!-- 본점 상호금융 (긴 카드) -->
@@ -124,7 +137,7 @@
         <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
             </path>
           </svg>
         </div>
@@ -207,16 +220,39 @@
           <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00</p>
         </a>
 
-        <!-- Spacer -->
-        <div class="h-32"></div>
+        <!-- 사업장 외 업무 (긴 카드) -->
+        <a href="#" data-business="other_business"
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
+          <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mb-2 text-gray-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+              </path>
+            </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 text-sm business-name">사업장 외 업무</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">본점 문의</p>
+        </a>
       </div>
     </div>
 
     <!-- 지점 섹션 -->
     <div class="mb-8">
-      <div class="flex items-center gap-2 mb-4">
-        <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
-        <h3 class="text-lg font-bold text-gray-900">지점</h3>
+      <!-- 지점 헤더 카드 -->
+      <div data-business="branch_header"
+        class="business-card bg-gradient-to-r from-indigo-500 to-indigo-600 p-5 rounded-2xl shadow-card mb-3 border border-indigo-400 relative">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-white text-lg business-name">지점</h3>
+            <p class="text-xs text-indigo-100 mt-0.5 business-hours">도흥지점 및 관련 사업장</p>
+          </div>
+        </div>
       </div>
       
       <!-- 도흥지점 - 상단 긴 카드 -->
