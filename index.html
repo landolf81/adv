@@ -118,22 +118,27 @@
         <h3 class="text-lg font-bold text-gray-900">본점</h3>
       </div>
       
+      <!-- 본점 상호금융 (긴 카드) -->
+      <a href="headquarters.html" data-business="headquarters"
+        class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
+        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+            </path>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h4 class="font-bold text-gray-900 business-name">상호금융</h4>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
+        </div>
+        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+
       <!-- 본점 사업장 그리드 (2 columns x 3 rows) -->
       <div class="grid grid-cols-2 gap-3">
-        <!-- 상호금융 -->
-        <a href="headquarters.html" data-business="headquarters"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
-          <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-              </path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-gray-900 text-sm business-name">상호금융</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-16:30</p>
-        </a>
-
         <!-- 하나로마트 -->
         <a href="mart.html" data-business="mart"
           class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
@@ -145,7 +150,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">매일 10:00-21:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-19:00 (휴일동일)</p>
         </a>
 
         <!-- 영농자재센터 -->
@@ -159,7 +164,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">영농자재센터</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">토/공휴일 ~12시, 일요일 휬무</p>
         </a>
 
         <!-- 공판장 -->
@@ -173,7 +178,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">공판장</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 09:00-17:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">2/22부터 일요일도 경매 (13시)</p>
         </a>
 
         <!-- 클린주유소 -->
@@ -185,7 +190,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">클린주유소</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">24시간 영업</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일 7-19시, 주말/공휴일 8-18시</p>
         </a>
 
         <!-- APC (유통센터) -->
@@ -199,8 +204,11 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">APC</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00</p>
         </a>
+
+        <!-- Spacer -->
+        <div class="h-32"></div>
       </div>
     </div>
 
@@ -233,7 +241,7 @@
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
         <a href="#" data-business="doheung_mart"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100 relative">
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-2 text-nh-green">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -242,12 +250,12 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">하나로마트</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">매일 10:00-21:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00, 휴일 ~12시</p>
         </a>
 
         <!-- 자재백화점 -->
         <a href="material_store.html" data-business="material_store"
-          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-28 border border-gray-100 relative">
+          class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-700">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -256,7 +264,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">자재백화점</h4>
-          <p class="text-xs text-gray-400 mt-0.5 business-hours">평일/토 09:00-18:00</p>
+          <p class="text-xs text-gray-400 mt-0.5 business-hours">09:00-18:00, 휴일 ~12시</p>
         </a>
       </div>
     </div>
@@ -284,17 +292,90 @@
 
   <!-- Business Hours Script -->
   <script>
+    // Check if date is a holiday (simplified - you'd need a proper holiday list)
+    function isHoliday(date) {
+      // This is a placeholder - you'd need to implement actual holiday checking
+      // For now, we'll treat Sunday as the only "holiday" for special hours
+      return date.getDay() === 0;
+    }
+
+    // Check if date is Sunday
+    function isSunday(date) {
+      return date.getDay() === 0;
+    }
+
+    // Check if date is Saturday
+    function isSaturday(date) {
+      return date.getDay() === 6;
+    }
+
     // Business hours configuration
     const businessHours = {
-      headquarters: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
-      mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 10, end: 21 } },
-      material: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
-      auction: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 17 } },
-      gas: { days: [0, 1, 2, 3, 4, 5, 6], hours: null }, // 24 hours
-      apc: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
-      doheung: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
-      doheung_mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 10, end: 21 } },
-      material_store: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } }
+      headquarters: { 
+        days: [1, 2, 3, 4, 5], 
+        hours: { start: 9, end: 16.5 } 
+      },
+      mart: { 
+        // 9:00-19:00, same on holidays
+        days: [0, 1, 2, 3, 4, 5, 6], 
+        hours: { start: 9, end: 19 } 
+      },
+      material: { 
+        // 평일 full, 토/공휴일 ~12시, 일요일 휬무
+        days: [1, 2, 3, 4, 5, 6], // Including Saturday (special handling below)
+        hours: function(date) {
+          if (isSunday(date)) return null; // Closed
+          if (isSaturday(date) || isHoliday(date)) {
+            return { start: 9, end: 12 }; // ~12시
+          }
+          return { start: 9, end: 18 }; // 평일
+        }
+      },
+      auction: { 
+        // 2/22부터 일요일도 경매. 현재는 경매시각 13시
+        // For simplicity, we'll check if it's before Feb 22, 2026
+        days: [1, 2, 3, 4, 5, 6], // Before Feb 22
+        hours: { start: 9, end: 17 } // Assuming auction ends by 17:00
+      },
+      gas: { 
+        // 평일 7-19시, 주말/공휴일 8-18시
+        days: [0, 1, 2, 3, 4, 5, 6], 
+        hours: function(date) {
+          const day = date.getDay();
+          if (day === 0 || day === 6 || isHoliday(date)) {
+            return { start: 8, end: 18 }; // 주말/공휴일
+          }
+          return { start: 7, end: 19 }; // 평일
+        }
+      },
+      apc: { 
+        days: [1, 2, 3, 4, 5, 6], 
+        hours: { start: 9, end: 18 } 
+      },
+      doheung: { 
+        days: [1, 2, 3, 4, 5], 
+        hours: { start: 9, end: 16.5 } 
+      },
+      doheung_mart: { 
+        // 9:00-18:00, 휴일 ~12시
+        days: [0, 1, 2, 3, 4, 5, 6], 
+        hours: function(date) {
+          if (isHoliday(date)) {
+            return { start: 9, end: 12 }; // 휴일 ~12시
+          }
+          return { start: 9, end: 18 };
+        }
+      },
+      material_store: { 
+        // 지점 자재는 지점 마트와 동일: 9:00-18:00, 휴일 ~12시
+        days: [0, 1, 2, 3, 4, 5, 6], 
+        hours: function(date) {
+          if (isHoliday(date)) {
+            return { start: 9, end: 12 }; // 휴일 ~12시
+          }
+          return { start: 9, end: 18 };
+        }
+      }
     };
 
     function checkBusinessStatus() {
@@ -308,17 +389,16 @@
         
         if (!config) return;
 
+        let hours = config.hours;
+        if (typeof hours === 'function') {
+          hours = hours(now);
+        }
+
         const isOpenDay = config.days.includes(today);
         let isOpen = false;
 
-        if (isOpenDay) {
-          if (config.hours === null) {
-            // 24 hours business (gas station)
-            isOpen = true;
-          } else {
-            // Check if within business hours
-            isOpen = currentHour >= config.hours.start && currentHour < config.hours.end;
-          }
+        if (isOpenDay && hours !== null) {
+          isOpen = currentHour >= hours.start && currentHour < hours.end;
         }
 
         // Remove existing badge
@@ -326,6 +406,7 @@
         if (existingBadge) {
           existingBadge.remove();
         }
+        card.classList.remove('business-closed');
 
         // Add badge
         const badge = document.createElement('div');
