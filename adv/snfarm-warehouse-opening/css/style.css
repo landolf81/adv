@@ -635,6 +635,19 @@ body {
 }
 
 /* ========================================
+   KAKAO CHANNEL BANNER
+   ======================================== */
+.kakao-channel {
+    padding: 0 1rem 2rem;
+}
+
+.kakao-banner {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .footer {
