@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "하베스트13M",
+      "description": "당, 깔끔, 얼룩이 물찬과 예방",
+      "originalPrice": 70000,
+      "salePrice": 60000,
+      "event": "10+1",
+      "image": "assets/images/product1.jpg",
+      "searchKeyword": "하베스트13M 농약"
+    },
+    {
+      "id": 2,
+      "name": "대유미리유기K",
+      "description": "깔끔, 당도 향상",
+      "originalPrice": 48000,
+      "salePrice": 43000,
+      "event": "3+1",
+      "image": "assets/images/product2.jpg",
+      "searchKeyword": "대유미리유기K 유기질 비료"
+    },
+    {
+      "id": 3,
+      "name": "인칼100",
+      "description": "경도, 꽃 품질 개선",
+      "originalPrice": 40000,
+      "salePrice": 30000,
+      "event": "3+1",
+      "image": "assets/images/product3.jpg",
+      "searchKeyword": "인칼100 칼슘 비료"
+    }
+  ],
+  "store": {
+    "name": "선남농협 자재센터",
+    "event": "확장이전 기념 파격행사",
+    "period": "2월 23일(월) ~ 재고소진시까지",
+    "phones": [
+      { "name": "본점", "number": "054-933-1322" },
+      { "name": "도흥지점", "number": "054-931-5279" }
+    ]
+  },
+  "imageSources": {
+    "product1": "https://www.google.com/search?q=하베스트13M+
