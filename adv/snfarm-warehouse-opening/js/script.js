@@ -66,23 +66,25 @@
     // ========================================
     // 페이지 공유 기능
     // ========================================
+    var LANDING_URL = 'https://nh.seonnam.com/adv/snfarm-warehouse-opening/';
+
     window.sharePage = function() {
-        const shareData = {
-            title: '선남농협 영농자재센터 확장이전 기념 파격행사',
-            text: '선남농협 영농자재센터 확장이전 기념 파격할인 행사! 한정수량 특가 제품을 확인하세요.',
-            url: window.location.href
-        };
+        var shareText = '선남농협 영농자재센터 확장이전 기념 파격할인 행사!\n한정수량 특가 제품을 확인하세요.\n\n' + LANDING_URL;
 
         if (navigator.share) {
-            navigator.share(shareData).catch(function() {});
+            navigator.share({
+                title: '선남농협 영농자재센터 확장이전 기념 파격행사',
+                text: '선남농협 영농자재센터 확장이전 기념 파격할인 행사!\n한정수량 특가 제품을 확인하세요.',
+                url: LANDING_URL
+            }).catch(function() {});
         } else if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(window.location.href).then(function() {
+            navigator.clipboard.writeText(shareText).then(function() {
                 alert('링크가 복사되었습니다!');
             }).catch(function() {
-                fallbackCopyToClipboard(window.location.href);
+                fallbackCopyToClipboard(shareText);
             });
         } else {
-            fallbackCopyToClipboard(window.location.href);
+            fallbackCopyToClipboard(shareText);
         }
     };
 

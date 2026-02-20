@@ -283,9 +283,10 @@ body {
 }
 
 .product-card {
+    position: relative;
     background: var(--white);
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: 1.25rem;
     box-shadow: var(--shadow-md);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -314,6 +315,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
 }
 
 .product-image-wrap img {
@@ -356,21 +358,21 @@ body {
 /* Badges */
 .badge-group {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: -14px;
+    left: 16px;
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
-    z-index: 2;
+    z-index: 10;
 }
 
 .product-badge {
-    background: transparent;
-    color: var(--accent-red);
-    padding: 0.5rem 0;
-    font-size: 1.125rem;
+    background: linear-gradient(135deg, var(--accent-red) 0%, var(--nh-green) 100%);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    font-size: 1.625rem;
     font-weight: 900;
-    text-shadow: 0 1px 3px rgba(255, 71, 87, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Product Info */
