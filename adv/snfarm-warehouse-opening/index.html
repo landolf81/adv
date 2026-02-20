@@ -3,120 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="선남농협 자재센터 확장이전 기념 파격할인 행사 - 농약, 비료 특가">
+    <meta name="theme-color" content="#00a854">
     <title>선남농협 자재센터 확장이전 기념 파격행사</title>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-floating-cta">
     <!-- Header Banner -->
     <header class="header-banner">
         <div class="banner-content">
-            <h1>🎉 확장이전 기념</h1>
-            <p>파격할인EVENT</p>
+            <span class="banner-badge">🎉 한정 특가</span>
+            <h1>확장이전 기념</h1>
+            <p>파격할인 EVENT</p>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h2 class="hero-title">선남농협 자재센터</h2>
-            <p class="hero-subtitle">새로운 곳으로 확장이전!</p>
-            <div class="event-period">
-                <span class="period-label">행사기간</span>
-                <span class="period-date">2월 23일(월) ~ 재고소진시</span>
+            <div class="hero-label">
+                <span class="icon">🏢</span>
+                <span>선남농협 자재센터</span>
             </div>
-            <p class="event-notice">⚠️ 한정수량, 조기마감 가능</p>
+            <h1 class="hero-title">새로운 곳으로<br>확장이전!</h1>
+            <p class="hero-subtitle">더 넓어진 공간, 더 다양한 상품</p>
+            
+            <div class="event-period">
+                <div class="period-header">
+                    <span class="period-label">행사기간</span>
+                    <span class="period-date">2월 23일(월) ~ 재고소진시</span>
+                </div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">일</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">시간</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">분</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">초</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="event-notice">
+                <span>⚡</span>
+                <span>한정수량, 조기마감 가능</span>
+            </p>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products">
-        <h2 class="section-title">특가 제품</h2>
+    <section class="products-section">
+        <div class="section-header">
+            <span class="section-label">Special Offer</span>
+            <h2 class="section-title">특가 제품</h2>
+            <p class="section-subtitle">확장이전 기념 파격 할인 상품</p>
+        </div>
         
-        <!-- Product 1 -->
-        <div class="product-card" data-product="1">
-            <a href="http://j-agro.com/post/64" target="_blank" class="product-link">
-                <div class="product-image">
-                    <img src="assets/images/product1.jpg" alt="하베스트13M" onerror="this.style.display='none'">
-                    <div class="product-badge">10+1</div>
+        <div class="products">
+            <!-- Product 1 -->
+            <article class="product-card" data-product="1">
+                <a href="http://j-agro.com/post/64" target="_blank" class="product-link">
+                    <div class="product-image-wrap">
+                        <img src="assets/images/product1.jpg" alt="하베스트13M" loading="lazy">
+                        <div class="badge-group">
+                            <span class="product-badge bonus">10+1</span>
+                        </div>
+                        <span class="stock-badge">🔥 인기상품</span>
+                    </div>
+                </a>
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">
+                            <a href="http://j-agro.com/post/64" target="_blank">
+                                하베스트13M
+                                <span class="link-icon">↗</span>
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="product-desc">당, 깔, 얼룩이 물찬과 예방</p>
+                    <div class="product-price-wrap">
+                        <div class="price-group">
+                            <span class="original-price">70,000원</span>
+                            <span class="sale-price">60,000원</span>
+                        </div>
+                        <span class="discount-badge">14%↓</span>
+                    </div>
+                    <a href="tel:054-933-1322" class="product-cta">📞 전화 주문하기</a>
                 </div>
-            </a>
-            <div class="product-info">
-                <h3><a href="http://j-agro.com/post/64" target="_blank">하베스트13M 🔗</a></h3>
-                <p class="product-desc">당, 깔, 얼룩이 물찬과 예방</p>
-                <div class="product-price">
-                    <span class="original-price">70,000원</span>
-                    <span class="sale-price">60,000원</span>
-                </div>
-                <div class="discount-badge">14%↓</div>
-            </div>
-        </div>
+            </article>
 
-        <!-- Product 2 -->
-        <div class="product-card" data-product="2">
-            <div class="product-image">
-                <img src="assets/images/product2.jpg" alt="대유미리유기K" onerror="this.style.display='none'">
-                <div class="product-badge">3+1</div>
-            </div>
-            <div class="product-info">
-                <h3>대유미리유기K</h3>
-                <p class="product-desc">깔, 당도</p>
-                <div class="product-price">
-                    <span class="original-price">48,000원</span>
-                    <span class="sale-price">43,000원</span>
+            <!-- Product 2 -->
+            <article class="product-card" data-product="2">
+                <div class="product-image-wrap">
+                    <img src="assets/images/product2.jpg" alt="대유미리유기K" loading="lazy">
+                    <div class="badge-group">
+                        <span class="product-badge">3+1</span>
+                    </div>
+                    <span class="stock-badge">✨ 신제품</span>
                 </div>
-                <div class="discount-badge">10%↓</div>
-            </div>
-        </div>
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">대유미리유기K</h3>
+                    </div>
+                    <p class="product-desc">깔, 당도 향상에 탁월</p>
+                    <div class="product-price-wrap">
+                        <div class="price-group">
+                            <span class="original-price">48,000원</span>
+                            <span class="sale-price">43,000원</span>
+                        </div>
+                        <span class="discount-badge">10%↓</span>
+                    </div>
+                    <a href="tel:054-933-1322" class="product-cta">📞 전화 주문하기</a>
+                </div>
+            </article>
 
-        <!-- Product 3 -->
-        <div class="product-card" data-product="3">
-            <div class="product-image">
-                <img src="assets/images/product3.jpg" alt="인칼100" onerror="this.style.display='none'">
-                <div class="product-badge">3+1</div>
-            </div>
-            <div class="product-info">
-                <h3>인칼100</h3>
-                <p class="product-desc">경도, 꽃</p>
-                <div class="product-price">
-                    <span class="original-price">40,000원</span>
-                    <span class="sale-price">30,000원</span>
+            <!-- Product 3 -->
+            <article class="product-card" data-product="3">
+                <div class="product-image-wrap">
+                    <img src="assets/images/product3.jpg" alt="인칼100" loading="lazy">
+                    <div class="badge-group">
+                        <span class="product-badge">3+1</span>
+                    </div>
+                    <span class="stock-badge">💥 최대할인</span>
                 </div>
-                <div class="discount-badge">25%↓</div>
-            </div>
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">인칼100</h3>
+                    </div>
+                    <p class="product-desc">경도, 꽃 발육 촉진</p>
+                    <div class="product-price-wrap">
+                        <div class="price-group">
+                            <span class="original-price">40,000원</span>
+                            <span class="sale-price">30,000원</span>
+                        </div>
+                        <span class="discount-badge">25%↓</span>
+                    </div>
+                    <a href="tel:054-933-1322" class="product-cta">📞 전화 주문하기</a>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
-        <h2 class="section-title">구매처 안내</h2>
-        <div class="contact-buttons">
-            <a href="tel:054-933-1322" class="contact-btn main-branch">
-                <span class="branch-name">선남농협 본점</span>
-                <span class="branch-phone">054-933-1322</span>
-            </a>
-            <a href="tel:054-931-5279" class="contact-btn branch">
-                <span class="branch-name">도흥지점</span>
-                <span class="branch-phone">054-931-5279</span>
-            </a>
+    <section class="contact-section">
+        <div class="section-header">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">구매처 안내</h2>
+            <p class="section-subtitle">전화 주문 또는 방문 구매 가능</p>
+        </div>
+        
+        <div class="contact">
+            <div class="contact-grid">
+                <a href="tel:054-933-1322" class="contact-card primary">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <div class="contact-label">본점 자재센터</div>
+                        <div class="contact-name">선남농협 본점</div>
+                        <div class="contact-phone">054-933-1322</div>
+                    </div>
+                    <span class="contact-arrow">→</span>
+                </a>
+                
+                <a href="tel:054-931-5279" class="contact-card secondary">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <div class="contact-label">지점</div>
+                        <div class="contact-name">도흥지점</div>
+                        <div class="contact-phone">054-931-5279</div>
+                    </div>
+                    <span class="contact-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Map Section -->
-    <section class="map">
-        <h2 class="section-title">오시는 길</h2>
-        <div class="map-placeholder">
-            <p>📍 지도 영역</p>
-            <p class="map-notice">(실제 위치는 연락처로 문의해주세요)</p>
+    <section class="map-section">
+        <div class="section-header">
+            <span class="section-label">Location</span>
+            <h2 class="section-title">오시는 길</h2>
+            <p class="section-subtitle">선남농협 자재센터 위치</p>
+        </div>
+        
+        <div class="map">
+            <div class="map-card">
+                <div class="map-header">
+                    <h3 class="map-title">📍 선남농협 본점</h3>
+                    <p class="map-address">경상북도 성주군 선남면 관화길 75-3</p>
+                </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div class="map-icon">🗺️</div>
+                        <p class="map-text">지도 준비중</p>
+                        <p class="map-subtext">아래 버튼으로 길찾기</p>
+                    </div>
+                </div>
+                <div class="map-actions">
+                    <a href="https://map.naver.com/v5/search/%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84%20%EC%84%B1%EC%A3%BC%EA%B5%B0%20%EC%84%A0%EB%82%A8%EB%A9%B4%20%EA%B4%80%ED%99%94%EA%B8%B8%2075-3" 
+                       target="_blank" class="map-btn naver">
+                        <span>🌐</span> 네이버 지도
+                    </a>
+                    <a href="https://map.kakao.com/?q=%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84%20%EC%84%B1%EC%A3%BC%EA%B5%B0%20%EC%84%A0%EB%82%A8%EB%A9%B4%20%EA%B4%80%ED%99%94%EA%B8%B8%2075-3" 
+                       target="_blank" class="map-btn kakao">
+                        <span>💬</span> 카카오맵
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-logo">
-            <p>🏢 선남농협</p>
+        <div class="footer-brand">
+            <div class="footer-logo">🏢 선남농협</div>
+            <p class="footer-tagline">자재센터 확장이전 기념 EVENT</p>
         </div>
-        <p class="footer-text">자재센터 확장이전 기념Event</p>
+        <div class="footer-divider"></div>
+        <div class="footer-info">
+            <p>경상북도 성주군 선남면 관화길 75-3</p>
+            <p>대표전화: 054-933-1322</p>
+        </div>
     </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <div class="floating-cta-inner">
+            <a href="tel:054-933-1322" class="floating-btn primary">
+                <span>📞</span>
+                <span>전화 주문</span>
+            </a>
+            <a href="#" class="floating-btn secondary" onclick="sharePage(); return false;">
+                <span>🔗</span>
+                <span>공유하기</span>
+            </a>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
