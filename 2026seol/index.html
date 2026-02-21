@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +20,45 @@
     }
   </script>
   <style>
-    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
-    .card-link { transition: transform 0.2s, box-shadow 0.2s; }
-    .card-link:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-    .card-link:active { transform: scale(0.98); }
-    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; }
-    .modal-overlay.show { display: flex; }
-    .modal-content { background: white; border-radius: 1rem; padding: 1.5rem; margin: 1rem; max-width: 320px; text-align: center; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+
+    .card-link {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-link:active {
+      transform: scale(0.98);
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1rem;
+      max-width: 320px;
+      text-align: center;
+    }
   </style>
   <script>
     const businessHours = {
@@ -58,7 +91,7 @@
       } else if (!isBusinessDay) {
         message = `${biz.name}은(는) 오늘 휴무입니다.`;
       } else if (!isBusinessHour) {
-        const timeStr = hour.toString().padStart(2,'0') + ':' + minute.toString().padStart(2,'0');
+        const timeStr = hour.toString().padStart(2, '0') + ':' + minute.toString().padStart(2, '0');
         message = `현재 시각 ${timeStr}\n${biz.name} 영업시간: ${biz.open}:00~${biz.close}:00\n\n영업시간이 아닙니다.`;
       } else {
         isOpen = true;
@@ -83,6 +116,7 @@
     }
   </script>
 </head>
+
 <body class="bg-gradient-to-b from-red-50 to-white min-h-screen">
 
   <!-- 영업시간 안내 모달 -->
@@ -90,8 +124,10 @@
     <div class="modal-content" onclick="event.stopPropagation()">
       <p id="modal-message" class="text-stone-700 text-lg whitespace-pre-line mb-4"></p>
       <div class="space-y-2">
-        <a id="modal-phone" href="" class="block w-full bg-red-600 text-white py-3 rounded-xl font-bold text-lg">그래도 전화하기</a>
-        <button onclick="closeModal()" class="block w-full bg-stone-200 text-stone-700 py-3 rounded-xl font-bold text-lg">닫기</button>
+        <a id="modal-phone" href="" class="block w-full bg-red-600 text-white py-3 rounded-xl font-bold text-lg">그래도
+          전화하기</a>
+        <button onclick="closeModal()"
+          class="block w-full bg-stone-200 text-stone-700 py-3 rounded-xl font-bold text-lg">닫기</button>
       </div>
     </div>
   </div>
@@ -110,14 +146,8 @@
 
     <!-- 설 인사 -->
     <div class="text-center mb-8">
-      <video
-        src="2026seol.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        class="w-full mx-auto rounded-2xl shadow-lg mb-5"
-      ></video>
+      <video src="2026seol.mp4" autoplay muted loop playsinline
+        class="w-full mx-auto rounded-2xl shadow-lg mb-5"></video>
       <p class="text-2xl md:text-3xl text-stone-800 font-bold">
         풍요로운 한 해 되세요
       </p>
@@ -136,11 +166,16 @@
           <thead>
             <tr class="bg-stone-50 border-b border-stone-200">
               <th class="px-3 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">사업장</th>
-              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">14<br><span class="text-sm md:text-base font-normal text-stone-500">토</span></th>
-              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">15<br><span class="text-sm md:text-base font-normal text-stone-500">일</span></th>
-              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">16<br><span class="text-sm md:text-base font-normal text-stone-500">월</span></th>
-              <th class="px-2 py-4 text-center font-bold text-red-600 bg-red-50 text-lg md:text-xl">17<br><span class="text-sm md:text-base font-normal">설날</span></th>
-              <th class="px-2 py-4 text-center font-bold text-stone-700 bg-red-50 text-lg md:text-xl">18<br><span class="text-sm md:text-base font-normal text-stone-500">수</span></th>
+              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">14<br><span
+                  class="text-sm md:text-base font-normal text-stone-500">토</span></th>
+              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">15<br><span
+                  class="text-sm md:text-base font-normal text-stone-500">일</span></th>
+              <th class="px-2 py-4 text-center font-bold text-stone-700 text-lg md:text-xl">16<br><span
+                  class="text-sm md:text-base font-normal text-stone-500">월</span></th>
+              <th class="px-2 py-4 text-center font-bold text-red-600 bg-red-50 text-lg md:text-xl">17<br><span
+                  class="text-sm md:text-base font-normal">설날</span></th>
+              <th class="px-2 py-4 text-center font-bold text-stone-700 bg-red-50 text-lg md:text-xl">18<br><span
+                  class="text-sm md:text-base font-normal text-stone-500">수</span></th>
             </tr>
           </thead>
           <tbody class="divide-y divide-stone-100">
@@ -186,12 +221,14 @@
     </div>
 
     <!-- 상세 영업 안내 -->
-    <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-4 px-1">상세 영업 시간 <span class="text-sm md:text-base font-normal text-stone-400">(터치하면 전화 연결)</span></h3>
+    <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-4 px-1">상세 영업 시간 <span
+        class="text-sm md:text-base font-normal text-stone-400">(터치하면 전화 연결)</span></h3>
 
     <div class="space-y-3">
 
       <!-- 하나로마트 -->
-      <a href="javascript:void(0)" onclick="checkAndCall('hanaro')" class="card-link block bg-gradient-to-br from-white to-stone-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
+      <a href="javascript:void(0)" onclick="checkAndCall('hanaro')"
+        class="card-link block bg-gradient-to-br from-white to-stone-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
         <div class="flex items-center justify-between">
           <div>
             <h4 class="text-xl md:text-2xl font-bold text-stone-800">하나로마트</h4>
@@ -200,7 +237,11 @@
           <div class="text-right">
             <p class="text-xl md:text-2xl font-bold text-red-600">09:00~19:00</p>
             <p class="text-sm text-stone-400 flex items-center justify-end gap-1 mt-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
               054-932-1194
             </p>
           </div>
@@ -208,20 +249,24 @@
       </a>
 
       <!-- 설맞이 할인행사 링크 -->
-      <a href="https://nh.seonnam.com" target="_blank" class="card-link block bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-5 shadow-md">
+      <a href="https://nh.seonnam.com" target="_blank"
+        class="card-link block bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-5 shadow-md">
         <div class="flex items-center justify-between">
           <div>
             <h4 class="text-xl md:text-2xl font-bold text-white">설맞이 할인행사 및 사은품 증정</h4>
             <p class="text-base md:text-lg text-white/80 mt-1">2026. 2. 3.(화) ~ 2. 16.(월)</p>
           </div>
           <div class="text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </div>
         </div>
       </a>
 
       <!-- 클린주유소 -->
-      <a href="javascript:void(0)" onclick="checkAndCall('gas')" class="card-link block bg-gradient-to-br from-white to-blue-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
+      <a href="javascript:void(0)" onclick="checkAndCall('gas')"
+        class="card-link block bg-gradient-to-br from-white to-blue-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
         <div class="flex items-center justify-between">
           <div>
             <h4 class="text-xl md:text-2xl font-bold text-stone-800">클린주유소</h4>
@@ -230,7 +275,11 @@
           <div class="text-right">
             <p class="text-xl md:text-2xl font-bold text-red-600">08:00~18:00</p>
             <p class="text-sm text-stone-400 flex items-center justify-end gap-1 mt-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
               054-932-1198
             </p>
           </div>
@@ -238,7 +287,8 @@
       </a>
 
       <!-- 영농자재센터 -->
-      <a href="javascript:void(0)" onclick="checkAndCall('farm')" class="card-link block bg-gradient-to-br from-white to-green-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
+      <a href="javascript:void(0)" onclick="checkAndCall('farm')"
+        class="card-link block bg-gradient-to-br from-white to-green-50 rounded-2xl p-5 shadow-md border border-stone-200/60">
         <div class="flex items-center justify-between">
           <div>
             <h4 class="text-xl md:text-2xl font-bold text-stone-800">영농자재센터</h4>
@@ -247,7 +297,11 @@
           <div class="text-right">
             <p class="text-xl md:text-2xl font-bold text-red-600">09:00~12:00</p>
             <p class="text-sm text-stone-400 flex items-center justify-end gap-1 mt-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
               054-933-1322
             </p>
           </div>
@@ -264,11 +318,13 @@
           <p class="text-xl md:text-2xl font-bold text-red-600">09:00~12:00</p>
         </div>
         <div class="flex gap-3">
-          <a href="javascript:void(0)" onclick="checkAndCall('doheung-mart')" class="flex-1 bg-white/80 hover:bg-white rounded-xl py-3 px-4 text-center transition-colors shadow-sm">
+          <a href="javascript:void(0)" onclick="checkAndCall('doheung-mart')"
+            class="flex-1 bg-white/80 hover:bg-white rounded-xl py-3 px-4 text-center transition-colors shadow-sm">
             <p class="text-sm text-stone-500">마트</p>
             <p class="text-base md:text-lg font-bold text-stone-700">054-932-0691</p>
           </a>
-          <a href="javascript:void(0)" onclick="checkAndCall('doheung-material')" class="flex-1 bg-white/80 hover:bg-white rounded-xl py-3 px-4 text-center transition-colors shadow-sm">
+          <a href="javascript:void(0)" onclick="checkAndCall('doheung-material')"
+            class="flex-1 bg-white/80 hover:bg-white rounded-xl py-3 px-4 text-center transition-colors shadow-sm">
             <p class="text-sm text-stone-500">자재</p>
             <p class="text-base md:text-lg font-bold text-stone-700">054-931-5279</p>
           </a>
@@ -308,5 +364,9 @@
     </div>
   </footer>
 
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "4a65aaa50dcb4d75af1df32cc9501770"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
+
 </html>

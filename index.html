@@ -129,7 +129,7 @@
           </div>
         </div>
       </a>
-      
+
       <!-- 본점 상호금융 (긴 카드) -->
       <a href="headquarters.html" data-business="headquarters"
         class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
@@ -198,7 +198,8 @@
           class="business-card bg-white p-4 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex flex-col items-center justify-center text-center h-32 border border-gray-100 relative">
           <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center mb-2 text-orange-500">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">클린주유소</h4>
@@ -239,7 +240,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- 도흥지점 - 상단 긴 카드 -->
       <a href="doheung.html" data-business="doheung"
         class="business-card bg-white p-5 rounded-2xl shadow-card active:scale-[0.98] transition-transform tap-highlight-transparent flex items-center gap-4 mb-3 border border-gray-100 relative">
@@ -257,7 +258,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
       </a>
-      
+
       <!-- 도흥지점 사업장 (2 cards) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- 하나로마트 -->
@@ -330,9 +331,9 @@
     const businessHours = {
       headquarters: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
       mart: { days: [0, 1, 2, 3, 4, 5, 6], hours: { start: 9, end: 19 } },
-      material: { 
+      material: {
         days: [1, 2, 3, 4, 5, 6],
-        hours: function(date) {
+        hours: function (date) {
           if (isSunday(date)) return null;
           if (isSaturday(date) || isHoliday(date)) {
             return { start: 9, end: 12 };
@@ -341,9 +342,9 @@
         }
       },
       auction: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 17 } },
-      gas: { 
-        days: [0, 1, 2, 3, 4, 5, 6], 
-        hours: function(date) {
+      gas: {
+        days: [0, 1, 2, 3, 4, 5, 6],
+        hours: function (date) {
           const day = date.getDay();
           if (day === 0 || day === 6 || isHoliday(date)) {
             return { start: 8, end: 18 };
@@ -353,18 +354,18 @@
       },
       apc: { days: [1, 2, 3, 4, 5, 6], hours: { start: 9, end: 18 } },
       doheung: { days: [1, 2, 3, 4, 5], hours: { start: 9, end: 16.5 } },
-      doheung_mart: { 
-        days: [0, 1, 2, 3, 4, 5, 6], 
-        hours: function(date) {
+      doheung_mart: {
+        days: [0, 1, 2, 3, 4, 5, 6],
+        hours: function (date) {
           if (isHoliday(date)) {
             return { start: 9, end: 12 };
           }
           return { start: 9, end: 18 };
         }
       },
-      material_store: { 
-        days: [0, 1, 2, 3, 4, 5, 6], 
-        hours: function(date) {
+      material_store: {
+        days: [0, 1, 2, 3, 4, 5, 6],
+        hours: function (date) {
           if (isHoliday(date)) {
             return { start: 9, end: 12 };
           }
@@ -381,7 +382,7 @@
       document.querySelectorAll('[data-business]').forEach(card => {
         const businessKey = card.getAttribute('data-business');
         const config = businessHours[businessKey];
-        
+
         if (!config) return;
 
         let hours = config.hours;
@@ -404,7 +405,7 @@
 
         const badge = document.createElement('div');
         badge.className = 'business-open-badge';
-        
+
         if (isOpen) {
           badge.classList.add('business-open');
           badge.textContent = '영업중';
@@ -413,7 +414,7 @@
           badge.textContent = '휴업';
           card.classList.add('business-closed');
         }
-        
+
         card.appendChild(badge);
       });
     }
@@ -422,6 +423,9 @@
     setInterval(checkBusinessStatus, 60000);
   </script>
 
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "4a65aaa50dcb4d75af1df32cc9501770"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
