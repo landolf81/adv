@@ -34,7 +34,7 @@ Two-level navigation:
 - `nh-blue: #005bac`
 
 ### Business Hours Status (index.html)
-`businessHours` object defines schedules per business. `getChuseokStatus()` applies the supplied September 24–27, 2026 schedule using Asia/Seoul dates. Holiday operating days display "영업일 · 시간 문의" because opening hours were not supplied; September 25–26 are closed for all locations.
+`businessHours` object defines schedules per business. `getChuseokStatus()` applies the supplied September 24–27, 2026 schedule using Asia/Seoul dates. Confirmed holiday hours are gas 08:00–18:00 and material 09:00–12:00 (closed Sundays). Other holiday operating days display "영업일 · 시간 문의"; September 25–26 are closed for all locations.
 
 `checkBusinessStatus()` runs on load and every 60 seconds, toggling `.business-open-badge` / `.business-closed-badge` on `[data-business]` cards.
 

@@ -197,7 +197,7 @@
             </svg>
           </div>
           <h4 class="font-bold text-gray-900 text-sm business-name">공판장</h4>
-          <p class="text-xs text-gray-500 mt-0.5 business-desc">경매</p>
+          <p class="text-xs text-gray-500 mt-0.5 business-desc">경매 11:30<br>마지막 경매 9/23(수)</p>
         </a>
 
         <!-- 클린주유소 -->
@@ -381,10 +381,11 @@
       }
     };
 
-    // Holiday notices specify operating days only, not opening hours.
+    // Apply the Chuseok closures before the confirmed holiday operating hours.
     function getChuseokStatus(businessKey, now) {
       const parts = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+        timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
       }).formatToParts(now);
       const date = Object.fromEntries(parts.map(part => [part.type, part.value]));
       if (date.year !== '2026' || date.month !== '09') return null;
@@ -393,7 +394,12 @@
       if (day === 25 || day === 26) return 'closed';
       const scheduled = ['mart', 'gas', 'material', 'doheung', 'doheung_mart', 'material_store'];
       if (!scheduled.includes(businessKey)) return 'unknown';
-      return day === 24 || businessKey === 'mart' || businessKey === 'gas' ? 'open-day' : 'closed';
+      const operatingDay = day === 24 || businessKey === 'mart' || businessKey === 'gas';
+      if (!operatingDay) return 'closed';
+      const holidayHours = { gas: [8, 18], material: [9, 12] }[businessKey];
+      if (!holidayHours) return 'open-day';
+      const hour = Number(date.hour) + Number(date.minute) / 60;
+      return hour >= holidayHours[0] && hour < holidayHours[1] ? 'open-now' : 'closed-hours';
     }
 
     function checkBusinessStatus() {
@@ -433,6 +439,13 @@
           badge.classList.add('business-closed-badge');
           badge.textContent = '추석 휴무';
           card.classList.add('business-closed');
+        } else if (holidayStatus === 'closed-hours') {
+          badge.classList.add('business-closed-badge');
+          badge.textContent = '영업시간 외';
+          card.classList.add('business-closed');
+        } else if (holidayStatus === 'open-now') {
+          badge.classList.add('business-open');
+          badge.textContent = '영업중';
         } else if (holidayStatus) {
           badge.classList.add('business-open');
           badge.textContent = holidayStatus === 'open-day' ? '영업일 · 시간 문의' : '추석 일정 확인';
