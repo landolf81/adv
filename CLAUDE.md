@@ -50,3 +50,7 @@ All pages use `max-w-md mx-auto` (≈448px), `user-scalable=no`, tap-highlight s
 - General business pages are self-contained; the Chuseok page has its own CSS file.
 - Card components use `bg-white rounded-2xl shadow-card` with `active:scale-[0.98] transition-transform`
 - Back navigation links to `index.html` from all detail/overview pages
+
+## Seasonal notice expiry
+
+`seasonal-notice.js` hides `[data-chuseok-notice]` links from 2026-09-28 00:00 Asia/Seoul, including pages left open. The Chuseok page redirects to the main page after expiry. The main business-status function already returns to normal schedules outside September 24–27. This uses the visitor device clock; no server scheduler is required.
